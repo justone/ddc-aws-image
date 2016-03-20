@@ -1,2 +1,3 @@
-# ddc-aws-image
-AWS development image for DDC
+# AWS Docker Dev Image
+
+See <https://github.com/justone/ddc-go>
