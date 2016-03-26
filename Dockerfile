@@ -1,4 +1,4 @@
-FROM dockdev/python:2.7
+FROM skegio/python:2.7
 
 RUN apt-get update && apt-get install libyaml-dev groff pv lftp -y
 RUN pip install awscli troposphere boto awacs requests ansible httpie
