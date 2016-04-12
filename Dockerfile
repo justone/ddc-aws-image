@@ -5,7 +5,7 @@ RUN add-apt-repository ppa:neovim-ppa/unstable && \
     pip install neovim && \
     pip3 install neovim
 
-RUN apt-get update && apt-get install libyaml-dev groff pv lftp zip -y
+RUN apt-get update && apt-get install libyaml-dev groff pv lftp zip multitail -y
 RUN pip install awscli troposphere boto awacs requests ansible httpie
 RUN wget https://releases.hashicorp.com/packer/0.10.0/packer_0.10.0_linux_amd64.zip -O /tmp/packer.zip && unzip -d /usr/local/bin/ /tmp/packer.zip && rm /tmp/packer.zip
 
