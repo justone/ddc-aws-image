@@ -1,7 +1,7 @@
 FROM skegio/python:2.7
 
 RUN add-apt-repository ppa:neovim-ppa/unstable && \
-    apt-get update && apt-get install -y neovim python-dev python-pip python3-dev python3-pip && \
+    apt-get update && apt-get install -y neovim python-dev python-pip python3-dev python3-pip telnet libssl-dev libffi-dev && \
     pip install neovim && \
     pip3 install neovim
 
