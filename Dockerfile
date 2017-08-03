@@ -10,7 +10,7 @@ RUN add-apt-repository ppa:jonathonf/vim && \
 
 RUN apt-get update && apt-get install libyaml-dev groff pv lftp zip multitail rsync python3-venv -y
 RUN pip install awscli troposphere boto awacs requests ansible httpie pre-commit
-RUN wget https://releases.hashicorp.com/packer/0.10.0/packer_0.10.0_linux_amd64.zip -O /tmp/packer.zip && unzip -d /usr/local/bin/ /tmp/packer.zip && rm /tmp/packer.zip
+RUN wget https://releases.hashicorp.com/packer/1.0.3/packer_1.0.3_linux_amd64.zip -O /tmp/packer.zip && unzip -d /usr/local/bin/ /tmp/packer.zip && rm /tmp/packer.zip
 
 # set up aws cli completion
 RUN echo "complete -C '/usr/local/bin/aws_completer' aws\n" > /etc/profile.d/awscli.sh
