@@ -12,6 +12,12 @@ RUN apt-get update && apt-get install libyaml-dev groff pv lftp zip multitail rs
 RUN pip install awscli troposphere boto awacs requests ansible httpie pre-commit
 RUN wget https://releases.hashicorp.com/packer/1.0.3/packer_1.0.3_linux_amd64.zip -O /tmp/packer.zip && unzip -d /usr/local/bin/ /tmp/packer.zip && rm /tmp/packer.zip
 
+RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
+    sudo apt-get install -y apt-transport-https ca-certificates && \
+    sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" && \
+    apt-get update && \
+    apt-get install -y docker-ce=17.06.0~ce-0~ubuntu
+
 # set up aws cli completion
 RUN echo "complete -C '/usr/local/bin/aws_completer' aws\n" > /etc/profile.d/awscli.sh
 RUN pip install --upgrade requests
