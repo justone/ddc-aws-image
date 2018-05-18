@@ -9,7 +9,7 @@ RUN add-apt-repository ppa:jonathonf/vim && \
     apt update && apt install -y vim-nox
 
 RUN apt-get update && apt-get install libyaml-dev groff pv lftp zip multitail rsync python3.4-venv gnupg-agent -y
-RUN pip install awscli troposphere boto awacs requests cryptography==2.0.3 ansible==2.3.2.0 httpie pre-commit
+RUN pip install awscli troposphere boto awacs requests cryptography ansible httpie pre-commit
 RUN wget https://releases.hashicorp.com/packer/1.0.3/packer_1.0.3_linux_amd64.zip -O /tmp/packer.zip && unzip -d /usr/local/bin/ /tmp/packer.zip && rm /tmp/packer.zip
 
 RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add - && \
